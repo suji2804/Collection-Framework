@@ -21,10 +21,10 @@ public class Employee implements Comparable<Employee> {
 	public String getName() {
 		return name;
 	}
-
+	
 	@Override
 	public int compareTo(Employee o) {
-		return this.getId() - o.getId();
+		return this.id - o.id;
 	}
 
 	@Override

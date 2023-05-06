@@ -13,28 +13,29 @@ public class Demo {
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>();
 		list.add("Java");
-		list.add("is");
-		list.add("great");
+		list.add("Python");
+		list.add("C");
 
 		System.out.println("---using index---");
 		for (int i = 0; i < list.size(); i++)
-			System.out.println("Value of item at index " + i + " is: " + list.get(i));
+			System.out.println("Value of element at index " + i + " is: " + list.get(i));
 
 		System.out.println("---enhanced for loop---");
-		for (String item : list)
-			System.out.println("Value of item is: " + item);
+		for (String element : list)
+			System.out.println("Value of element is: " + element);
 
 		System.out.println("---using iterator---");
-		Iterator<String> iterator1 = list.iterator();
-		while (iterator1.hasNext())
-			System.out.println("Value of item is: " + iterator1.next());
-
+		Iterator<String> iterator = list.iterator();
+		while (iterator.hasNext())
+			System.out.println("Value of element is: " + iterator.next());
+		
 		System.out.println("---using list iterator forward---");
-		ListIterator<String> iterator2 = list.listIterator();
-		while (iterator2.hasNext())
-			System.out.println("Value of item is: " + iterator2.next());
+		ListIterator<String> listIterator = list.listIterator();
+		while (listIterator.hasNext())
+			System.out.println("Value of element is: " + listIterator.next());
+		
 		System.out.println("---using list iterator backward---");
-		while (iterator2.hasPrevious())
-			System.out.println("Value of item is: " + iterator2.previous());
+		while (listIterator.hasPrevious())
+			System.out.println("Value of element is: " + listIterator.previous());
 	}
 }

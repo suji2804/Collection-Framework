@@ -1,6 +1,5 @@
 package com.scaleupindia.example6;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -9,20 +8,21 @@ import java.util.List;
  */
 public class Demo {
 	public static void main(String[] args) {
-		List<String> list = Arrays.asList("Java", "is", "good");
-		System.out.println("Length of list is: " + list.size());
-		System.out.println("Value of list is: " + list);
-		// list.add("great");
-		System.out.println("Item at index 1 is " + list.get(1));
-		// list.set(2, "good");
-		// list.clear();
-		if (list.isEmpty()) {
-			System.out.println("List is empty");
-		}
+		List<String> list = List.of("Java", "Python", "C");
 
-		String searchableItem = "Java";
-		if (list.contains(searchableItem)) {
-			System.out.println("List contains item " + searchableItem);
-		}
+		System.out.println("This list is an unmodifiable list");
+		System.out.println("Contents of list are: " + list);
+
+		System.out.println("Modification of list is not allowed");
+		// list.set(2, "SQL");
+
+		System.out.println("Addition of new element to list is not allowed");
+		// list.add("C#");
+
+		System.out.println("Removal of element from list is not allowed");
+		// list.remove("C#");
+
+		System.out.println("Clear list is not allowed");
+		// list.clear();
 	}
 }

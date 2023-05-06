@@ -19,14 +19,14 @@ public class Demo {
 		list.add(new Employee(50, "Dick"));
 		
 		System.out.println("---DEFAULT---");
-		System.out.println("Value of list is: " + list);
+		System.out.println("Contents of list are: " + list);
 		
 		System.out.println("---SORT BY ID---");
 		Collections.sort(list);
-		System.out.println("Value of list is: " + list);
+		System.out.println("Contents of list are: " + list);
 		
 		System.out.println("---SORT BY NAME---");
 		Collections.sort(list, new CustomEmployeeComparator());
-		System.out.println("Value of list is: " + list);
+		System.out.println("Contents of list are: " + list);
 	}
 }

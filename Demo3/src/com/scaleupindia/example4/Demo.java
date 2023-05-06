@@ -1,8 +1,9 @@
 package com.scaleupindia.example4;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * @author abhishekvermaa10
@@ -10,26 +11,34 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Demo {
 	public static void main(String[] args) {
-		Map<Integer, String> hashMap = new HashMap<>();
-		hashMap.put(30, "Thirty");
-		hashMap.put(80, "Eighty");
-		hashMap.put(17, "Seventeen");
-		hashMap.put(56, "Fifty Six");
-		for (Integer key : hashMap.keySet()) {
-			System.out.println(hashMap.get(key));
-			// items.remove(key);
-		}
-		System.out.println("Value of Hash Map is: " + hashMap);
+		Set<String> hashSet = new HashSet<>();
+		hashSet.add("Java");
+		hashSet.add("is");
+		hashSet.add("good");
+		hashSet.add("You");
+		hashSet.add("should");
+		hashSet.add("learn");
+		hashSet.add("this");
+		System.out.println("Contents of HashSet are: " + hashSet);
 
-		Map<Integer, String> concurrentHashMap = new ConcurrentHashMap<>();
-		concurrentHashMap.put(30, "Thirty");
-		concurrentHashMap.put(80, "Eighty");
-		concurrentHashMap.put(17, "Seventeen");
-		concurrentHashMap.put(56, "Fifty Six");
-		for (Integer key : concurrentHashMap.keySet()) {
-			System.out.println(concurrentHashMap.get(key));
-			concurrentHashMap.remove(key);
-		}
-		System.out.println("Value of Concurrent Hash Map is: " + concurrentHashMap);
+		Set<String> linkedHashSet = new LinkedHashSet<>();
+		linkedHashSet.add("Java");
+		linkedHashSet.add("is");
+		linkedHashSet.add("good");
+		linkedHashSet.add("You");
+		linkedHashSet.add("should");
+		linkedHashSet.add("learn");
+		linkedHashSet.add("this");
+		System.out.println("Contents of LinkedHashSet are: " + linkedHashSet);
+
+		Set<String> treeSet = new TreeSet<>();
+		treeSet.add("Java");
+		treeSet.add("is");
+		treeSet.add("good");
+		treeSet.add("You");
+		treeSet.add("should");
+		treeSet.add("learn");
+		treeSet.add("this");
+		System.out.println("Contents of TreeSet are: " + treeSet);
 	}
 }

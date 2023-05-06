@@ -18,13 +18,11 @@ public class Demo {
 		set.add(new Employee(50, "Dick"));
 
 		System.out.println("---DEFAULT---");
-		System.out.println("Value of set is: " + set);
+		System.out.println("Contents of set are: " + set);
 
 		System.out.println("---SORT BY NAME---");
 		Set<Employee> set2 = new TreeSet<>(new CustomEmployeeComparator());
-		set2.add(new Employee(20, "Harry"));
-		set2.add(new Employee(10, "Tom"));
-		set2.add(new Employee(50, "Dick"));
-		System.out.println("Value of set is: " + set2);
+		set2.addAll(set);
+		System.out.println("Contents of set are: " + set2);
 	}
 }

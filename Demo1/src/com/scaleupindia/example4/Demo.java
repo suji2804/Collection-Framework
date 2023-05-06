@@ -1,6 +1,6 @@
 package com.scaleupindia.example4;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,42 +10,44 @@ import java.util.List;
  */
 public class Demo {
 	public static void main(String[] args) {
-		List<String> list = new LinkedList<>();
-		System.out.println("Length of list is: " + list.size());
-		System.out.println("Value of list is: " + list);
-		list.add("Java");
-		list.add("is");
-		list.add("great");
-		System.out.println("Length of list is: " + list.size());
-		System.out.println("Value of list is: " + list);
-		System.out.println("Item at index 1 is " + list.get(1));
-		list.add(1, "now");
-		System.out.println("Length of list is: " + list.size());
-		System.out.println("Value of list is: " + list);
-		// items.add(10, "execption");
-		list.set(2, "good");
-		System.out.println("Length of list is: " + list.size());
-		System.out.println("Value of list is: " + list);
-		list.clear();
-		if (list.isEmpty()) {
-			System.out.println("List is empty");
+		List<Integer> arrayList = new ArrayList<>();
+		List<Integer> linkedList = new LinkedList<>();
+		int numberOfElements = 100000;
+		
+		long startTime1 = System.nanoTime();
+		for (int i = 0; i < numberOfElements; i++) {
+			arrayList.add(i);
 		}
+		long endTime1 = System.nanoTime();
+		long duration1 = (endTime1 - startTime1);
+		System.out.println("Time taken by ArrayList for addition/modification of " + numberOfElements + " elements is "
+				+ duration1 + " nanoseconds");
 
-		List<String> list2 = Arrays.asList("Spring", "is", "also", "good");
-		list.addAll(list2);
-		System.out.println("Length of list is: " + list.size());
-		System.out.println("Value of list is: " + list);
-		String searchableItem = "Spring";
-		if (list.contains(searchableItem)) {
-			System.out.println("List contains item " + searchableItem);
+		long startTime2 = System.nanoTime();
+		for (int i = 0; i < numberOfElements; i++) {
+			linkedList.add(i);
 		}
+		long endTime2 = System.nanoTime();
+		long duration2 = (endTime2 - startTime2);
+		System.out.println("Time taken by LinkedList for addition/modification of " + numberOfElements + " elements is "
+				+ duration2 + " nanoseconds");
+		
+		long startTime3 = System.nanoTime();
+		for (int i = 0; i < numberOfElements; i++) {
+			arrayList.get(i);
+		}
+		long endTime3 = System.nanoTime();
+		long duration3 = endTime3 - startTime3;
+		System.out.println("Time taken by ArrayList for access/retrieval of " + numberOfElements + " elements is "
+				+ duration3 + " nanoseconds");
 
-		list.remove("Springs");
-		System.out.println("Length of list is: " + list.size());
-		System.out.println("Value of list is: " + list);
-
-		list.remove(1);
-		System.out.println("Length of list is: " + list.size());
-		System.out.println("Value of list is: " + list);
+		long startTime4 = System.nanoTime();
+		for (int i = 0; i < numberOfElements; i++) {
+			linkedList.get(i);
+		}
+		long endTime4 = System.nanoTime();
+		long duration4 = endTime4 - startTime4;
+		System.out.println("Time taken by LinkedList for access/retrieval of " + numberOfElements + " elements is "
+				+ duration4 + " nanoseconds");
 	}
 }

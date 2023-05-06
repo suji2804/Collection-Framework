@@ -1,9 +1,7 @@
 package com.scaleupindia.example4;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * @author abhishekvermaa10
@@ -11,34 +9,16 @@ import java.util.TreeSet;
  */
 public class Demo {
 	public static void main(String[] args) {
-		Set<String> hashSet = new HashSet<>();
-		hashSet.add("Java");
-		hashSet.add("is");
-		hashSet.add("great");
-		hashSet.add("You");
-		hashSet.add("should");
-		hashSet.add("learn");
-		hashSet.add("this");
-		System.out.println("Value of Hash Set is: " + hashSet);
+		Queue<Integer> queue = new LinkedList<>();
+		queue.add(1);
+		queue.add(2);
+		queue.add(3);
+		System.out.println("Contents of queue are: " + queue);
 
-		Set<String> linkedHashSet = new LinkedHashSet<>();
-		linkedHashSet.add("Java");
-		linkedHashSet.add("is");
-		linkedHashSet.add("great");
-		linkedHashSet.add("You");
-		linkedHashSet.add("should");
-		linkedHashSet.add("learn");
-		linkedHashSet.add("this");
-		System.out.println("Value of Linked Hash Set is: " + linkedHashSet);
+		queue.remove(2);
+		System.out.println("Contents of queue are: " + queue);
 
-		Set<String> treeSet = new TreeSet<>();
-		treeSet.add("Java");
-		treeSet.add("is");
-		treeSet.add("great");
-		treeSet.add("You");
-		treeSet.add("should");
-		treeSet.add("learn");
-		treeSet.add("this");
-		System.out.println("Value of Tree Set is: " + treeSet);
+		queue.remove(Integer.valueOf(1));
+		System.out.println("Contents of queue are: " + queue);
 	}
 }

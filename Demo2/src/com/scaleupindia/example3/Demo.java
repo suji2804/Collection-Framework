@@ -1,11 +1,9 @@
 package com.scaleupindia.example3;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.Deque;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * @author abhishekvermaa10
@@ -13,18 +11,38 @@ import java.util.Set;
  */
 public class Demo {
 	public static void main(String[] args) {
-		Set<Integer> set = new HashSet<>();
-		set.add(1);
-		set.add(2);
-		set.add(3);
-		System.out.println("Value of set is: " + set);
-		set.remove(1);
-		System.out.println("Value of set is: " + set);
-		set.remove(Integer.valueOf(1));
-		System.out.println("Value of set is: " + set);
-		set.addAll(Arrays.asList(4, 2, 8, 3, 6));
-		List<Integer> list = new ArrayList<>(set);
-		Collections.sort(list);
-		System.out.println("Value of set is: " + list);
+		Queue<String> queue = new LinkedList<>();
+		queue.add("Java");
+		queue.add("Python");
+		queue.add("C");
+
+		System.out.println("---enhanced for loop---");
+		for (String element : queue)
+			System.out.println("Value of element is: " + element);
+
+		System.out.println("---using iterator---");
+		Iterator<String> iterator = queue.iterator();
+		while (iterator.hasNext())
+			System.out.println("Value of element is: " + iterator.next());
+
+		Deque<String> deque = new LinkedList<>();
+		deque.add("Java");
+		deque.add("Python");
+		deque.add("C");
+
+		System.out.println("---enhanced for loop---");
+		for (String element : deque)
+			System.out.println("Value of element is: " + element);
+
+		System.out.println("---using iterator---");
+		Iterator<String> iterator2 = deque.iterator();
+		while (iterator2.hasNext())
+			System.out.println("Value of element is: " + iterator2.next());
+
+		System.out.println("---using descendingIterator---");
+		Iterator<String> descendingIterator = deque.descendingIterator();
+		while (descendingIterator.hasNext())
+			System.out.println("Value of element is: " + descendingIterator.next());
+
 	}
 }

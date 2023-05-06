@@ -1,9 +1,11 @@
 package com.scaleupindia.example1;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
+import java.util.Queue;
 
 /**
  * @author abhishekvermaa10
@@ -11,30 +13,65 @@ import java.util.Set;
  */
 public class Demo {
 	public static void main(String[] args) {
-		Set<String> set = new HashSet<>();
-		System.out.println("Length of set is: " + set.size());
-		System.out.println("Value of set is: " + set);
-		set.add("Java");
-		set.add("is");
-		set.add("great");
-		System.out.println("Length of set is: " + set.size());
-		System.out.println("Value of set is: " + set);
-		set.clear();
-		if (set.isEmpty()) {
-			System.out.println("Set is empty");
+		System.out.println("Create a queue");
+		Queue<String> queue = new LinkedList<>();
+		
+		System.out.println("Find size of queue");
+		System.out.println("Size of queue is: " + queue.size());
+		
+		System.out.println("Display queue");
+		System.out.println("Contents of queue are: " + queue);
+		
+		System.out.println("Add element to queue (always added at tail)");
+		queue.add("Java");
+		queue.add("Python");
+		queue.add("C");
+		System.out.println("Size of queue is: " + queue.size());
+		System.out.println("Contents of queue are: " + queue);
+		queue.offer("C++");
+		queue.offer("C#");
+		queue.offer("SQL");
+		System.out.println("Size of queue is: " + queue.size());
+		System.out.println("Contents of queue are: " + queue);
+		
+		System.out.println("Fetch element from queue (always from head)");
+		System.out.println("Element at head is: " + queue.element());
+		System.out.println("Element at head is: " + queue.peek());
+		
+		System.out.println("Remove element from queue (always from head)");
+		queue.remove();
+		System.out.println("Size of queue is: " + queue.size());
+		System.out.println("Contents of queue are: " + queue);
+		queue.poll();
+		System.out.println("Size of queue is: " + queue.size());
+		System.out.println("Contents of queue are: " + queue);
+		
+		System.out.println("Check if queue contains element");
+		String searchableItem = "Java";
+		if (queue.contains(searchableItem)) {
+			System.out.println("Queue contains element: " + searchableItem);
 		}
-
-		List<String> list2 = Arrays.asList("Spring", "is", "also", "good");
-		set.addAll(list2);
-		System.out.println("Length of set is: " + set.size());
-		System.out.println("Value of set is: " + set);
-		String searchableItem = "Spring";
-		if (set.contains(searchableItem)) {
-			System.out.println("Set contains item " + searchableItem);
+		
+		System.out.println("Clear queue");
+		queue.clear();
+		System.out.println("Size of queue is: " + queue.size());
+		System.out.println("Contents of queue are: " + queue);
+		
+		System.out.println("Check if queue is empty");
+		if (queue.isEmpty()) {
+			System.out.println("Queue is empty");
 		}
-
-		set.remove("Springs");
-		System.out.println("Length of set is: " + set.size());
-		System.out.println("Value of set is: " + set);
+		
+		System.out.println("Add elements to queue (always added at tail)");
+		List<String> list = Arrays.asList("JavaScript", "C#", "Java");
+		queue.addAll(list);
+		System.out.println("Size of queue is: " + queue.size());
+		System.out.println("Contents of queue are: " + queue);
+		
+		System.out.println("Sort elements of queue");
+		List<String> list2 = new ArrayList<>(queue);
+		System.out.println("Contents of list are: " + list2);		
+		Collections.sort(list2);
+		System.out.println("Contents of sorted list are: " + list2);
 	}
 }

@@ -1,5 +1,6 @@
 package com.scaleupindia.example5;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -8,20 +9,36 @@ import java.util.List;
  */
 public class Demo {
 	public static void main(String[] args) {
-		List<String> list = List.of("Java", "is");
-		System.out.println("Length of list is: " + list.size());
-		System.out.println("Value of list is: " + list);
-		// list.add("great");
-		System.out.println("Item at index 1 is " + list.get(1));
-		// list.set(2, "good");
-		// list.clear();
-		if (list.isEmpty()) {
-			System.out.println("List is empty");
+		String[] array = { "Java", "Python", "C" };
+		List<String> list = Arrays.asList(array);
+
+		System.out.println("This list is backed by array");
+		System.out.println("Contents of list are: " + list);
+		for (String element : array) {
+			System.out.println("Value of element is: " + element);
 		}
 
-		String searchableItem = "Java";
-		if (list.contains(searchableItem)) {
-			System.out.println("List contains item " + searchableItem);
+		System.out.println("Modifying list will modify array also");
+		list.set(2, "SQL");
+		System.out.println("Contents of list are: " + list);
+		for (String element : array) {
+			System.out.println("Value of element is: " + element);
 		}
+
+		System.out.println("Modifying array will modify list also");
+		array[1] = "JavaScript";
+		System.out.println("Contents of list are: " + list);
+		for (String element : array) {
+			System.out.println("Value of element is: " + element);
+		}
+		
+		System.out.println("Addition of new element to list is not allowed");
+		//list.add("C#");
+		
+		System.out.println("Removal of element from list is not allowed");
+		//list.remove("Java");
+
+		System.out.println("Clear list is not allowed");
+		//list.clear();
 	}
 }
