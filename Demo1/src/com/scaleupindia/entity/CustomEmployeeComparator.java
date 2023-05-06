@@ -2,6 +2,10 @@ package com.scaleupindia.entity;
 
 import java.util.Comparator;
 
+/**
+ * @author abhishekvermaa10
+ *
+ */
 public class CustomEmployeeComparator implements Comparator<Employee> {
 
 	@Override
